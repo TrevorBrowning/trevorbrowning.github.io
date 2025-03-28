@@ -1,76 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trevor Browning - Python Projects</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f5f5f5;
       color: #333;
     }
     header {
-      background-color: #2d2d2d;
+      background-color: #1f1f1f;
       color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
     }
     header h1 {
-      margin: 0;
       font-size: 2.5rem;
+      margin-bottom: 0.25rem;
     }
-    main {
-      max-width: 800px;
-      margin: 3rem auto;
+    header p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
-    main h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background-color: #fff;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border: 1px solid #ddd;
+
+    /* === About Section === */
+    .about {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 1.5rem;
       border-radius: 8px;
-      transition: box-shadow 0.2s;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
-    li:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    /* === Columns Layout === */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
-    a {
-      text-decoration: none;
-      color: #1a73e8;
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card p {
+      margin: 0.5rem 0 1rem 0;
+    }
+    .card a {
       font-weight: 600;
+      color: #1a73e8;
+      text-decoration: none;
     }
-    a:hover {
+    .card a:hover {
       text-decoration: underline;
+    }
+
+    .card img, .card video {
+      width: 100%;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+
+    /* === Footer Socials === */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #b1b1b1; /* or even #333 */
+;
+    }
+    footer img {
+      height: 32px;
+      margin: 0 10px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    footer img:hover {
+      opacity: 1;
+    }
+    footer a {
+  text-decoration: none;
+}
+
+
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Trevor Browning</h1>
-    <p>Python App Developer</p>
+    <p>Python App Developer · Learning by Building</p>
   </header>
-  <main>
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="https://github.com/TrevorBrowning/Simple-Calculator">Simple Calculator</a></li>
-      <li><a href="https://github.com/TrevorBrowning/TrevList">To-Do List App (TrevList)</a></li>
-      <li><a href="https://github.com/TrevorBrowning/FileRenamer">File Renamer</a></li>
-      <li><a href="https://github.com/TrevorBrowning/Simple-Timer">Simple Timer</a></li>
-      <li><a href="https://github.com/TrevorBrowning/Password-Generator-GUI">Password Generator - GUI</a></li>
-    </ul>
-  </main>
+
+  <div class="container">
+
+    <!-- === About Section === -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I'm a Python developer focused on building clean, practical desktop applications using Tkinter. I approach every project as a chance to improve — whether it’s UI design, file handling, or organizing code for real-world use.</p>
+      <p>My background is in film production, but now I spend my time creating tools that work. I learn by building, refining, and sharing projects that solve small problems well.</p>
+    </section>
+
+    <!-- === Projects + Dev Log === -->
+    <div class="columns">
+
+      <!-- === PROJECTS COLUMN === -->
+      <div class="column">
+        <h2>Projects</h2>
+
+        <div class="card">
+          <h3>📝 TrevList - To-Do App</h3>
+          <p>A simple GUI task tracker with save/load, clear, and keyboard support.</p>
+          <a href="https://github.com/TrevorBrowning/TrevList" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <h3>🗂️ File Renamer</h3>
+          <p>Bulk rename files by extension and prefix with live preview.</p>
+          <a href="https://github.com/TrevorBrowning/FileRenamer" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <h3>🧮 Simple Calculator</h3>
+          <p>Clean calculator with keyboard support, `.exe` export, and minimal UI.</p>
+          <a href="https://github.com/TrevorBrowning/Simple-Calculator" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <h3>⏱️ Simple Timer</h3>
+          <p>Track time spent per project. Start, pause, reset, all with keyboard shortcuts.</p>
+          <a href="https://github.com/TrevorBrowning/Simple-Timer" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <h3>🔐 Password Generator</h3>
+          <p>Generate strong, custom passwords. Save, copy, and calculate strength.</p>
+          <a href="https://github.com/TrevorBrowning/Password-Generator-GUI" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- === DEV LOG COLUMN === -->
+      <div class="column">
+        <h2>Dev Log</h2>
+
+        <div class="card">
+          <h3>📘 14 Python GUI Apps in 14 Days</h3>
+          <p>My self-guided challenge to build and release a new Python GUI app every day.</p>
+          <a href="https://dev.to/your-post-url" target="_blank">Read on Dev.to →</a>
+        </div>
+
+        <!-- Add more logs here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- === FOOTER === -->
+  <footer>
+    <a href="https://github.com/TrevorBrowning" target="_blank">
+      <img src="assets/Github.png" alt="GitHub" />
+    </a>
+    <a href="https://dev.to/trevorbrowning" target="_blank">
+      <img src="assets/DevCommunity.png" alt="Dev.to" />
+    </a>
+    <a href="https://bsky.app/profile/trevorbrowning.bsky.social" target="_blank">
+      <img src="assets/Bluesky.png" alt="Bluesky" />
+    </a>
+    <a href="https://twitter.com/BrowningRTrevor" target="_blank">
+      <img src="assets/Twitter.png" alt="Twitter" />
+    </a>
+  </footer>
+
 </body>
 </html>
