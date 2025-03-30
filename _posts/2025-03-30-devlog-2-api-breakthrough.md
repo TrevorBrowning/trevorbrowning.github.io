@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "DevLog #2 — When APIs Finally Click"
-date: 2024-03-30
+date: 2025-03-30
 banner: /assets/blog/devlog-2-banner.png
 thumbnail: /assets/blog/devlog-2-thumbnail.png
 
