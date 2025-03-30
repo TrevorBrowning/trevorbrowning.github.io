@@ -1,6 +1,11 @@
 ---
+layout: default
 title: "DevLog #2: When APIs Finally Clicked"
+date: 2024-03-28
 tags: beginners, python, learning, api
+banner: /assets/blog/devlog-2-banner.png
+thumbnail: /assets/blog/devlog-2-thumbnail.png
+
 ---
 
 A week ago, just hearing the word “API” made me nervous.
