@@ -8,6 +8,18 @@ thumbnail: /assets/blog/devlog-2-thumbnail.png
 tags: [beginners, python, learning, coding]
 ---
 
+<img src="{{ page.banner }}" alt="Devlog banner"
+     style="width: 100%; max-height: 280px; object-fit: cover; border-radius: 8px; margin: 1.5rem 0;" />
+
+<div style="background: #e0eff7; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+  <h1 style="margin-top: 0; font-size: 2rem;">Learning Python by Building</h1>
+  <h3 style="margin: 0.2rem 0 0.5rem;">When APIs Finally Clicked</h3>
+  <p style="margin: 0;">A hands-on devlog series by Trevor Browning</p>
+</div>
+
+<p><em>Published March 30, 2025</em></p>
+
+
 A week ago, just hearing the word “API” made me nervous.
 
 I’d seen them everywhere—every tutorial, every tool—but I never fully understood how they worked. I tried learning about them a couple of years ago, and again at the start of this current 14-day Python challenge. Both times, I hit a wall. JSON? Endpoints? Headers? I’d get overwhelmed and move on.
