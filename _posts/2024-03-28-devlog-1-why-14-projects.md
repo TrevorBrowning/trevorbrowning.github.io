@@ -5,53 +5,66 @@ date: 2024-03-28
 banner: /assets/blog/devlog-1-banner.png
 ---
 
-<img src="{{ page.banner }}" alt="Banner" style="max-width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover; margin-bottom: 1.5rem;" />
+<img src="{{ page.banner }}" alt="Blog banner"
+     style="width: 100%; max-height: 280px; border-radius: 8px; object-fit: cover; display: block; margin: 1.5rem 0;" />
 
+<p><em>Published March 28, 2024</em></p>
 
-I've been teaching myself Python for a while now, but recently I realized I needed something more structured — and more motivating.
+---
 
-So I gave myself a challenge: **Build 14 complete projects in 14 days.**  
+I’ve been teaching myself Python for a while, but I recently realized I needed something more structured — and more motivating.
+
+So I gave myself a challenge: **build 14 complete projects in 14 days.**  
 Each day, I:
-- Come up with an idea
-- Build it out with Python (usually Tkinter)
-- Add styling, features, maybe even polish it for GitHub
-- And wrap the day with a DevLog like this
+- Come up with a small but useful idea
+- Build it out using Python (usually with Tkinter)
+- Add polish and features
+- And then document what I learned in a daily devlog
 
-Why? Because shipping projects is the best way to learn.
+The goal isn’t just to finish apps — it’s to build a **repeatable workflow** for learning by building and publishing.
 
-## 💻 The Rules
+---
 
-- Each project must have a **GUI using Tkinter**
-- It must be **publishable** (GitHub + .exe export)
-- No filler projects — even if it's small, it has to solve a real problem
-- Track the whole journey in a public devlog
+## The Rules
 
-## 🔄 What I’ve Built So Far
+- Each project must have a **GUI** built with **Tkinter**
+- It must be **publishable** — with GitHub source and `.exe` export
+- No filler projects. Even small ones must solve a real problem
+- Track everything in public via devlogs and GitHub commits
 
-- ✅ Day 1: TrevList — a GUI to-do app
-- ✅ Day 2: File Renamer — bulk rename utility with live preview
-- ✅ Day 3: Simple Calculator — keyboard support, eval(), styling
-- ✅ Day 4: Password Generator — saves to file, copies to clipboard
-- ✅ Day 5: WriteDaily — distraction-free journaling app
+---
 
-Each one teaches me something new:
-- How to handle input validation
-- How to organize code into functions and modules
-- How to work with files and exceptions
-- How to style a Tkinter UI that *doesn’t* look like it’s from 1998
+## What I’ve Built So Far
 
-## 🚀 What Comes After 14 Days?
+**Day 1**: TrevList – a clean to-do list app  
+**Day 2**: File Renamer – bulk rename tool with live preview  
+**Day 3**: Simple Calculator – keyboard-friendly calculator with minimal UI  
+**Day 4**: Password Generator – strong passwords, save to file, clipboard support  
+**Day 5**: WriteDaily – distraction-free journaling app with focus mode
 
-This isn't just about finishing 14 apps — it’s about building a repeatable system for learning, shipping, and iterating.
+Each project is helping me improve:
+- File handling and saving
+- Input validation and error handling
+- Clean UI design in Tkinter
+- Modular code structure and functions
+- Packaging and publishing for users
 
-After 14 days:
-- I’ll revisit my best apps and improve the UI
-- Convert a few into web apps (with Flask)
-- Host them on my own site at [TrevorBrowning.com](https://trevorbrowning.com)
-- Maybe even start writing mini tutorials or guides based on each app
+---
 
-Thanks for following along — and if you're learning Python too, try giving yourself a constraint like this. It *works*.
+## What Comes Next?
 
-—
+Once the 14 days are up, I’ll take the strongest projects and:
 
-🧠 Follow along here on my blog, or on [GitHub](https://github.com/TrevorBrowning) and [Dev.to](https://dev.to/trevorbrowning)!
+- Refactor and clean up the UI
+- Convert a few into **web apps** using Flask
+- Host them directly on [TrevorBrowning.com](https://trevorbrowning.com)
+- Possibly write tutorials or mini breakdowns of how they were built
+
+This challenge has already helped me break through that "beginner wall." I feel more confident using Python to make useful, real-world tools — and now I’m starting to think bigger.
+
+Thanks for reading — and if you're learning Python too, I highly recommend setting a constraint like this.  
+It works.
+
+---
+
+**Follow along** here on the blog, or find me on [GitHub](https://github.com/TrevorBrowning) and [Dev.to](https://dev.to/trevorbrowning).
