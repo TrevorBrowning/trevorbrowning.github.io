@@ -6,13 +6,18 @@ banner: /assets/blog/devlog-1-banner.png
 tags: [beginners, python, learning, coding]
 ---
 
-<img src="{{ page.banner }}" alt="Devlog banner" style="width: 100%; max-height: 280px; object-fit: cover; border-radius: 8px; margin: 1.5rem 0;" />
+<img src="{{ page.banner }}" alt="Devlog banner"
+     style="width: 100%; max-height: 280px; object-fit: cover; border-radius: 8px; margin: 1.5rem 0;" />
+
+<div style="background: #e0eff7; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+  <h1 style="margin-top: 0; font-size: 2rem;">Learning Python by Building</h1>
+  <h3 style="margin: 0.2rem 0 0.5rem;">Why I’m Building 14 Projects (And What Comes After)</h3>
+  <p style="margin: 0;">A hands-on devlog series by Trevor Browning</p>
+</div>
 
 <p><em>Published March 28, 2024</em></p>
 
 ---
-
-## DevLog #1: Why I’m Building 14 Projects (and What Comes After)
 
 Earlier this week, I gave myself a challenge: **build 14 small Python projects in 14 days.**  
 The original plan was simple — stick to basic CLI apps, focus on core Python concepts, and keep the momentum going.
