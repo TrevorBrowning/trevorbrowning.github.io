@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "DevLog #1 — Why I'm Building 14 Projects (and What Comes After)"
-date: 2024-03-28
+date: 2025-03-28
 banner: /assets/blog/devlog-1-banner.png
 thumbnail: /assets/blog/devlog-1-thumbnail.png
 
