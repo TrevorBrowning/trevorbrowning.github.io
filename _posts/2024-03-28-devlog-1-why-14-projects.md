@@ -5,7 +5,8 @@ date: 2024-03-28
 banner: /assets/blog/devlog-1-banner.png
 ---
 
-<img src="{{ page.banner }}" alt="14 Projects Dev Log Banner" style="width: 100%; border-radius: 8px; margin-bottom: 1.5rem;" />
+<img src="{{ page.banner }}" alt="Banner" style="max-width: 100%; max-height: 300px; border-radius: 8px; object-fit: cover; margin-bottom: 1.5rem;" />
+
 
 I've been teaching myself Python for a while now, but recently I realized I needed something more structured — and more motivating.
 
