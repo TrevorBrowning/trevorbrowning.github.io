@@ -1,15 +1,38 @@
 ---
 layout: default
-title: Home
+title: YourWeather
 ---
 
-<section class="project weather">
+<style>
+  .weather-embed-wrapper {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
 
+  .weather-embed-wrapper iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    display: block;
+  }
 
+  @media (max-width: 768px) {
+    .weather-embed-wrapper {
+      height: calc(100vh - 60px); /* adjust if your header/footer exists */
+    }
+
+    .weather-embed-wrapper iframe {
+      height: 100%;
+    }
+  }
+</style>
+
+<section class="project weather weather-embed-wrapper">
   <iframe 
-    src="https://yourweather-peyf.onrender.com" 
-    width="100%" 
-    height="1200"
-    style="border: none; border-radius: 10px; margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    src="https://yourweather-peyf.onrender.com"
+    loading="lazy"
+    allowfullscreen>
   </iframe>
 </section>
