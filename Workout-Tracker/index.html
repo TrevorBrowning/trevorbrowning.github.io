@@ -12,55 +12,157 @@
         <h1>Trev's Workout Tracker</h1>
       </header>
 
-      <div class="tab">
-        <button class="tablinks" data-day="day_1">Mon.</button>
-        <button class="tablinks" data-day="day_2">Tues.</button>
-        <button class="tablinks" data-day="day_3">Wed.</button>
-        <button class="tablinks" data-day="day_4">Thurs.</button>
-        <button class="tablinks" data-day="day_5">Fri</button>
-        <button class="tablinks" data-day="day_6">Sat.</button>
-        <button class="tablinks" data-day="day_7">Sun.</button>
+      <!-- Top Navigation Tabs -->
+      <div class="nav-tab">
+        <button class="navtab active-tab" nav-data="workouts">Workouts</button>
+        <button class="navtab" nav-data="progress-log">Progress Log</button>
+        <button class="navtab" nav-data="nutrition">Nutrition</button>
+        <button class="navtab" nav-data="definitions">
+          Workout Definitions
+        </button>
+        <button class="navtab" nav-data="mindset">Mindset</button>
+        <button class="navtab" nav-data="stats">Stats</button>
       </div>
 
-      <main>
-        <h2 id="day-title">Monday</h2>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Workout</th>
-                <th>Sets</th>
-                <th>Reps/Time</th>
-                <th>Completed</th>
-              </tr>
-            </thead>
-            <tbody id="workout-table-body">
-              <!-- Rows will be injected by JavaScript -->
-            </tbody>
-          </table>
+      <!-- Workouts Tab Content -->
+      <div id="workouts" class="nav-content">
+        <div id="day-tabs" class="tab">
+          <button class="tablinks active-tab" data-day="day_1">Mon.</button>
+          <button class="tablinks" data-day="day_2">Tues.</button>
+          <button class="tablinks" data-day="day_3">Wed.</button>
+          <button class="tablinks" data-day="day_4">Thurs.</button>
+          <button class="tablinks" data-day="day_5">Fri</button>
+          <button class="tablinks" data-day="day_6">Sat.</button>
+          <button class="tablinks" data-day="day_7">Sun.</button>
         </div>
 
-        <div id="workout-timer">
-          <h3>Quick Timer</h3>
-
-          <div class="timer-controls">
-            <select id="time-select">
-              <option value="30">30 Sec</option>
-              <option value="60">60 Sec</option>
-              <option value="90">90 Sec</option>
-              <option value="120">2 Min</option>
-              <option value="240">4 Min</option>
-            </select>
-
-            <p id="timer-display">00:30</p>
+        <main>
+          <h2 id="day-title">Monday</h2>
+          <p id="workout-tip">Click workout to view description</p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Workout</th>
+                  <th>Sets</th>
+                  <th>Reps/Time</th>
+                  <th>Completed</th>
+                </tr>
+              </thead>
+              <tbody id="workout-table-body"></tbody>
+            </table>
           </div>
 
-          <div class="timer-buttons">
-            <input type="button" id="start-btn" value="Start" />
-            <input type="button" id="reset-btn" value="Reset" />
+          <div id="workout-timer">
+            <h3>Quick Timer</h3>
+            <div class="timer-controls">
+              <select id="time-select">
+                <option value="30">30 Sec</option>
+                <option value="60">60 Sec</option>
+                <option value="90">90 Sec</option>
+                <option value="120">2 Min</option>
+                <option value="240">4 Min</option>
+              </select>
+              <p id="timer-display">00:30</p>
+            </div>
+            <div class="timer-buttons">
+              <input type="button" id="start-btn" value="Start" />
+              <input type="button" id="reset-btn" value="Reset" />
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- Progress Log Tab -->
+      <div id="progress-log" class="nav-content" style="display: none">
+        <h2>Progress Log</h2>
+        <p>Track your completed workouts, notes, and export data.</p>
+        <input type="button" id="new-entry-btn" value="New Entry" />
+        <div id="progress-entries"></div>
+
+        <!-- Modal for New Entry -->
+        <div id="progress-modal" class="modal hidden">
+          <div class="modal-content-prog" id="progress-modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-progress-title">New Entry</h3>
+            <p id="modal-progress-log">Add new entry to progress log...</p>
+
+            <label for="workout-date">Workout Date:</label><br />
+            <input type="date" id="workout-date" name="workout-date" /><br />
+
+            <label for="workout-log-type">Workout Type:</label><br />
+            <select id="workout-log-type" name="workout-log-type">
+              <option value="Upper Body">Upper Body</option>
+              <option value="Lower Body">Lower Body</option>
+              <option value="Core & Cardio">Core & Cardio</option>
+              <option value="Full Body HIIT">Full Body HIIT</option>
+              <option value="Active Recovery">Active Recovery</option></select
+            ><br />
+
+            <label for="progress-notes">Notes:</label><br />
+            <textarea
+              id="progress-notes"
+              name="progress-notes"
+              rows="6"
+              cols="30"
+            ></textarea
+            ><br />
+
+            <label for="progress-check">Workout Completed?</label>
+            <input
+              type="checkbox"
+              id="progress-check"
+              name="progress-check"
+            /><br /><br />
+
+            <input type="button" id="submit-entry-btn" value="Add Entry" />
           </div>
         </div>
-      </main>
+      </div>
+
+      <!-- Nutrition Tab -->
+      <div id="nutrition" class="nav-content" style="display: none">
+        <h2>Nutrition</h2>
+        <p>Nutrition tips and healthy eating guidelines.</p>
+      </div>
+
+      <!-- Definitions Tab -->
+      <div id="definitions" class="nav-content" style="display: none">
+        <h2>Workout Definitions</h2>
+        <p>Descriptions and diagrams for each exercise.</p>
+        <ul id="definition-list" class="definition-list"></ul>
+      </div>
+      
+
+      <!-- Mindset Tab -->
+      <div id="mindset" class="nav-content" style="display: none">
+        <h2>🧠 Daily Motivation</h2>
+        <p id="mindset-quote"></p>
+      </div>
+
+      <!-- Stats Tab -->
+      <div id="stats" class="nav-content" style="display: none">
+        <h2>Stats</h2>
+        <p>Visual charts of weekly/monthly performance.</p>
+      </div>
+
+      <!-- Exercise Modal -->
+      <div id="exercise-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h3 id="modal-exercise-name">Exercise Name</h3>
+          <p id="modal-exercise-description">Description goes here...</p>
+          <img id="modal-exercise-image" src="" alt="Exercise Diagram" />
+        </div>
+      </div>
+    </div>
+    <!-- Progress Entry View Modal -->
+    <div id="view-log-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3 id="view-log-title">Progress Entry</h3>
+        <p id="view-log-content"></p>
+      </div>
     </div>
 
     <audio id="alarm-sound" src="alarm.wav" preload="auto"></audio>
