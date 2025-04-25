@@ -1,62 +1,158 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- === HERO SECTION === -->
-<section style="background:#1f1f1f; color:white; padding: 2rem 1rem; text-align:center; border-radius: 8px;">
-  <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Hi, I'm Trevor Browning</h1>
-  <p style="font-size: 1.2rem;">Python App Developer · Building real tools with Tkinter & Flask</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trevor R. Browning</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
 
-</section>
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-<div class="container">
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
 
-  <!-- === About Section === -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>I'm a Python developer focused on building clean, practical desktop applications using Tkinter. I approach every project as a chance to improve — whether it’s UI design, file handling, or organizing code for real-world use.</p>
-    <p>My background is in film production, but now I spend my time creating tools that work. I learn by building, refining, and sharing projects that solve small problems well.</p>
+    .profile h1 {
+      margin: 0.2rem 0;
+      font-size: 1.8rem;
+    }
+
+    .profile p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card {
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      padding-top: 150%; /* aspect ratio 2:3 */
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-back {
+      background-color: #fff;
+      transform: rotateY(180deg);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="profile">
+    <img src="assets/profile.jpg" alt="Trevor R. Browning">
+    <h1>Trevor R. Browning</h1>
+    <p>Producer | Storyteller | Creative Strategist<br>
+      I’m a producer focused on bold stories and cinematic worlds. With a background in both indie and studio-backed
+      features, I work across genres to bring ambitious visions to life.</p>
   </section>
 
-  <!-- === Columns Section === -->
-  <div class="columns">
-
-    <!-- === PROJECTS COLUMN === -->
-    <div class="column">
-      <h2>Projects</h2>
-
-      <div class="card">
-        <h3>✍️ WriteDaily</h3>
-        <p>A journaling app with autosave, focus mode, and a distraction-free interface.</p>
-        <a href="https://github.com/TrevorBrowning/WriteDaily" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="card">
-        <h3>📝 TrevList</h3>
-        <p>A simple to-do tracker with save/load, clear-all, and keyboard shortcuts.</p>
-        <a href="https://github.com/TrevorBrowning/TrevList" target="_blank">View on GitHub →</a>
-      </div>
-
-      <div class="card">
-        <h3>🔐 Password Generator</h3>
-        <p>Strong password generation with options for save/export + clipboard copy.</p>
-        <a href="https://github.com/TrevorBrowning/Password-Generator-GUI" target="_blank">View on GitHub →</a>
+  <section class="portfolio">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="assets/films/something-happens-here.jpg" alt="Something Happens Here">
+        </div>
+        <div class="card-back">
+          <strong>Something Happens Here (2015)</strong>
+          <p>Producer – A surreal journey into self and silence.</p>
+        </div>
       </div>
     </div>
-
-    <!-- === BLOG COLUMN === -->
-    <div class="column">
-      <h2>Dev Log</h2>
-
-      {% for post in site.posts limit:3 %}
-      <div class="card">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-        <a href="{{ post.url }}">Read more →</a>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="assets/films/lost-creek.jpg" alt="Lost Creek">
+        </div>
+        <div class="card-back">
+          <strong>Lost Creek (2016)</strong>
+          <p>Producer – A haunting tale of childhood and the unseen.</p>
+        </div>
       </div>
-      {% endfor %}
-
     </div>
-  </div>
-</div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="assets/films/last-man-on-earth.jpg" alt="Last Man on Earth">
+        </div>
+        <div class="card-back">
+          <strong>Last Man on Earth</strong>
+          <p>Producer – An exploration of isolation and identity.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="assets/films/the-cellar.jpg" alt="The Cellar">
+        </div>
+        <div class="card-back">
+          <strong>The Cellar (Upcoming)</strong>
+          <p>Producer – A new entry in atmospheric indie horror.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
