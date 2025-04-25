@@ -85,7 +85,6 @@
     }
 
     .card-back {
-      background: url('assets/films/info-bg.jpg') center/cover no-repeat;
       color: white;
       transform: rotateY(180deg);
       display: flex;
@@ -95,6 +94,8 @@
       padding: 1rem;
       box-sizing: border-box;
       text-align: center;
+      background-size: cover;
+      background-position: center;
     }
 
     .card-back h3 {
@@ -128,10 +129,15 @@
       background: rgba(255, 255, 255, 0.3);
     }
 
+    .watch-section {
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+    }
+
     .watch-icons {
       display: flex;
       gap: 0.5rem;
-      margin-top: 0.5rem;
+      margin-top: 0.3rem;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -159,13 +165,14 @@
         <div class="card-front">
           <img src="assets/films/the-cellar.jpg" alt="The Cellar">
         </div>
-        <div class="card-back">
+        <div class="card-back" style="background: url('assets/films/info-cellar.jpg') center/cover no-repeat;">
           <h3>The Cellar (Upcoming)</h3>
           <p>[Short description placeholder]</p>
           <div class="buttons">
             <a href="#" target="_blank">Watch Trailer</a>
             <a href="#" target="_blank">IMDb</a>
           </div>
+          <div class="watch-section">Watch here:</div>
           <div class="watch-icons">
             <img src="assets/icons/tubi.png" alt="Tubi">
             <img src="assets/icons/prime.png" alt="Prime Video">
@@ -180,15 +187,16 @@
         <div class="card-front">
           <img src="assets/films/last-man-on-earth.jpg" alt="Last Man on Earth">
         </div>
-        <div class="card-back">
+        <div class="card-back" style="background: url('assets/films/info-last-man.jpg') center/cover no-repeat;">
           <h3>Last Man on Earth</h3>
           <p>[Short description placeholder]</p>
           <div class="buttons">
             <a href="#" target="_blank">Watch Trailer</a>
             <a href="#" target="_blank">IMDb</a>
           </div>
+          <div class="watch-section">Watch here:</div>
           <div class="watch-icons">
-            <img src="assets/icons/tubi.png" alt="Tubi">
+            <img src="assets/icons/vudu.png" alt="Vudu">
             <img src="assets/icons/prime.png" alt="Prime Video">
           </div>
         </div>
@@ -201,42 +209,4 @@
         <div class="card-front">
           <img src="assets/films/lost-creek.jpg" alt="Lost Creek">
         </div>
-        <div class="card-back">
-          <h3>Lost Creek (2016)</h3>
-          <p>As they approach the end of childhood, three elementary school kids must brave the woods on Halloween to face a monster born from their nightmares.</p>
-          <div class="buttons">
-            <a href="#" target="_blank">Watch Trailer</a>
-            <a href="#" target="_blank">IMDb</a>
-          </div>
-          <div class="watch-icons">
-            <img src="assets/icons/tubi.png" alt="Tubi">
-            <img src="assets/icons/prime.png" alt="Prime Video">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Something Happens Here -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="assets/films/something-happens-here.jpg" alt="Something Happens Here">
-        </div>
-        <div class="card-back">
-          <h3>Something Happens Here (2015)</h3>
-          <p>[Short description placeholder]</p>
-          <div class="buttons">
-            <a href="#" target="_blank">Watch Trailer</a>
-            <a href="#" target="_blank">IMDb</a>
-          </div>
-          <div class="watch-icons">
-            <img src="assets/icons/tubi.png" alt="Tubi">
-            <img src="assets/icons/prime.png" alt="Prime Video">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-
-</html>
+        <div class="card-back" style="background: url('assets/films/info-lost-creek.jpg') cente
