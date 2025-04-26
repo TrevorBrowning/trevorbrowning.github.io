@@ -1,16 +1,301 @@
-.ribbon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ff4757;
-  color: white;
-  font-size: 0.65rem;
-  font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 4px;
-  z-index: 1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transform: rotate(-5deg);
-  opacity: 0.95;
-  pointer-events: none;
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trevor R. Browning</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #1b1b1b;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #f8f8f8;
+      border-bottom: 2px solid #444;
+      padding-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .profile h1 {
+      margin: 0.2rem 0;
+      font-size: 2rem;
+      color: #f8f8f8;
+    }
+
+    .profile p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .links {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .social-buttons a {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: white;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid white;
+      transition: background 0.3s;
+    }
+
+    .social-buttons a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .portfolio-section {
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .card {
+      width: 280px;
+      max-width: 100%;
+      perspective: 1000px;
+      position: relative;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      padding-top: 150%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-back {
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .card-back h3 {
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .card-back p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-back .buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .card-back .buttons a {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      color: white;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid white;
+      transition: background 0.3s;
+    }
+
+    .card-back .buttons a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Upcoming ribbon */
+    .ribbon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ff4757;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 4px;
+      z-index: 1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      transform: rotate(-5deg);
+      opacity: 0.95;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="profile">
+    <img src="assets/trev-biking.jpg" alt="Trevor R. Browning">
+    <h1>Trevor R. Browning</h1>
+    <p>Filmmaker | Writer | Software Developer<br><br>
+      I create independent films, write stories across genres, and build web projects as a growing software developer. I’m passionate about combining creativity and technology in the work I do.
+    </p>
+  </section>
+
+  <section class="links">
+    <h2>Connect with Me</h2>
+    <div class="social-buttons">
+      <a href="https://www.github.com/Trevorbrowning" target="_blank">GitHub</a>
+      <a href="https://www.imdb.com/name/nm7354690/?ref_=ext_shr_lnk" target="_blank">IMDb</a>
+      <a href="https://bsky.app/profile/trevorbrowning.bsky.social" target="_blank">Bluesky</a>
+      <a href="https://www.twitter.com/BrowningRTrevor" target="_blank">Twitter</a>
+    </div>
+  </section>
+
+  <section class="portfolio-section">
+    <h2>Filmography</h2>
+    <div class="portfolio">
+
+      <!-- The Cellar (Upcoming) -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="ribbon">Upcoming – 2025</div>
+            <img src="assets/films/the-cellar.jpg" alt="The Cellar">
+          </div>
+          <div class="card-back" style="background: url('assets/films/info-cellar.jpg') center/cover no-repeat;">
+            <h3>The Cellar (Upcoming 2025)</h3>
+            <p>A young girl wakes up imprisoned underground, with amnesia. She must escape, unravel the mystery behind her captivity, and confront her personal struggles.</p>
+            <div class="buttons">
+              <a href="https://www.youtube.com/watch?v=3I1sNUJLsUA" target="_blank">Watch Trailer</a>
+              <a href="https://www.imdb.com/title/tt31852558/" target="_blank">IMDb</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Last Man on Earth -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="assets/films/last-man-on-earth.jpg" alt="Last Man on Earth">
+          </div>
+          <div class="card-back" style="background: url('assets/films/info-last-man.jpg') center/cover no-repeat;">
+            <h3>Last Man on Earth (2016)</h3>
+            <p>Virologist Dr Diane Visconti is recruited by a bio research conglomerate to head up a project aiming to find a cure for cancer.</p>
+            <div class="buttons">
+              <a href="https://www.youtube.com/watch?v=DX6tIDz3kzk" target="_blank">Watch Trailer</a>
+              <a href="https://www.imdb.com/title/tt4870516/" target="_blank">IMDb</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lost Creek -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="assets/films/lost-creek.jpg" alt="Lost Creek">
+          </div>
+          <div class="card-back" style="background: url('assets/films/info-lost-creek.jpg') center/cover no-repeat;">
+            <h3>Lost Creek (2016)</h3>
+            <p>As they approach the end of childhood, three elementary school kids must brave the woods on Halloween to face a monster born from their nightmares.</p>
+            <div class="buttons">
+              <a href="https://www.youtube.com/watch?v=gFcb2bWLBEI" target="_blank">Watch Trailer</a>
+              <a href="https://www.imdb.com/title/tt5610746" target="_blank">IMDb</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Something Happens Here -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="assets/films/something-happens-here.jpg" alt="Something Happens Here">
+          </div>
+          <div class="card-back" style="background: url('assets/films/info-happens-here.jpg') center/cover no-repeat;">
+            <h3>Something Happens Here (2015)</h3>
+            <p>When Becky meets David, she drops her defenses. David introduces her to 'His family' where life is good, until Becky begins to understand the extent that David will go to, to expand his family and ideology.</p>
+            <div class="buttons">
+              <a href="https://www.youtube.com/watch?v=PtW9Q5PYIeg" target="_blank">Watch Trailer</a>
+              <a href="https://www.imdb.com/title/tt3862094/" target="_blank">IMDb</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+</html>
