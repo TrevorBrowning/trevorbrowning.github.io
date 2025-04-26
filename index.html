@@ -216,6 +216,38 @@
         opacity: 0.95;
         pointer-events: none;
       }
+      .social-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .social-buttons .social-icon {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 0.75rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .social-buttons .social-icon:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(1.1);
+      }
+
+      .social-buttons .social-icon img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        filter: invert(1); /* Turn black SVGs to white for dark background */
+      }
 
       @media (max-width: 600px) {
         .profile img {
@@ -244,23 +276,42 @@
     <section class="links">
       <h2>Connect with Me</h2>
       <div class="social-buttons">
-        <a href="https://www.github.com/Trevorbrowning" target="_blank"
-          >GitHub</a
-        >
-        <a
-          href="https://www.imdb.com/name/nm7354690/?ref_=ext_shr_lnk"
-          target="_blank"
-          >IMDb</a
-        >
         <a
           href="https://bsky.app/profile/trevorbrowning.bsky.social"
           target="_blank"
-          >Bluesky</a
+          class="social-icon"
         >
-        <a href="https://www.twitter.com/BrowningRTrevor" target="_blank"
-          >Twitter</a
+          <img src="assets/social-icons/bluesky.svg" alt="Bluesky" />
+        </a>
+        <a
+          href="https://www.github.com/Trevorbrowning"
+          target="_blank"
+          class="social-icon"
         >
-        <a href="mailto:treryanbrowning@gmail.com" target="_blank">Email</a>
+          <img src="assets/social-icons/github.svg" alt="GitHub" />
+        </a>
+        <a
+          href="https://www.imdb.com/name/nm7354690/?ref_=ext_shr_lnk"
+          target="_blank"
+          class="social-icon"
+        >
+          <img src="assets/social-icons/imdb.svg" alt="IMDb" />
+        </a>
+
+        <a
+          href="https://www.twitter.com/BrowningRTrevor"
+          target="_blank"
+          class="social-icon"
+        >
+          <img src="assets/social-icons/x.svg" alt="Twitter" />
+        </a>
+        <a
+          href="mailto:treryanbrowning@gmail.com"
+          target="_blank"
+          class="social-icon"
+        >
+          <img src="assets/social-icons/gmail.svg" alt="Email" />
+        </a>
       </div>
     </section>
 
@@ -287,10 +338,6 @@
                 an intimate glimpse into a life lived between four walls, where
                 every small step is a triumph.
               </p>
-              <div class="buttons">
-                <a href="#" target="_blank">Watch Trailer</a>
-                <a href="#" target="_blank">IMDb</a>
-              </div>
             </div>
           </div>
         </div>
